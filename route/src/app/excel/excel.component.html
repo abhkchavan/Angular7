@@ -1,0 +1,19 @@
+<div class="container" >
+<input type="file" (change)="onFileChange($event)" multiple="false" />
+	<table class="table" border='5'>
+    
+		<tr *ngFor="let row of data">
+			<td *ngFor="let val of row">
+        
+          {{val}}
+        
+			</td> 
+		</tr>
+  </table>
+  <router-outlet></router-outlet>
+</div>
+  
+  
+    
+	
+	
