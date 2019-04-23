@@ -1,0 +1,34 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  
+  <input type="date" name="from" ngModelrst  #from="ngModel" [(ngModel)]="dateModel.from">
+  <input type="date" name="to" ngModel #to="ngModel" [(ngModel)]="dateModel.to" >
+
+  <button class="btn-info">Submit</button>
+
+
+  
+</form>
+<div class="jumbotron text-center">
+    <h1>EXAM DRIVE BY DATERANGE</h1>
+    
+  </div>
+<div class="container">
+<table class="table">
+    <thead class="thead-dark">
+<tr>
+  <th>ClientName</th>
+  <th>Date</th>
+<th>Batches</th> 
+<th>Capacity</th>
+
+</tr>
+</thead>
+<tr *ngFor="let dr of drive">
+<td>{{dr.client_name}}</td>
+<td>{{ dr.date | date }}</td>
+<td>{{dr.batches}}</td>
+<td>{{dr.capacity}}</td>
+</tr>
+
+</table>
+</div>
