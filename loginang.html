@@ -1,0 +1,29 @@
+<div class="container">
+
+    <form #form="ngForm" name="regform" (ngSubmit)="onSubmit($event)">
+        <hr>
+       
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text"  name="username" #username="ngModel"  id="username" 
+        (ngModel)="username" class="form-control" required >
+       <small class="text-danger" [class.d-none]="username.valid || username.untouched">username required</small>
+       
+    </div>
+    
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" #password="ngModel" id="password"  (ngModel)="password" class="form-control" required >
+    <small class="text-danger" [class.d-none]="password.valid || password.untouched">password required</small>
+  </div>
+  
+  <div class="form-group">
+    <button [disabled]="loading" type="submit" id="submit" class="btn btn-primary">Register</button>
+    <img *ngIf="loading" class="pl-3" >
+    <a routerLink="/login" class="btn btn-link">Cancel</a>
+  </div>
+  
+  
+    </form>
+  
+  </div>
